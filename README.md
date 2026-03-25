@@ -30,7 +30,9 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 
 ### v1.10
 - **NEW:** Added **Screen Scaling** to ensure a perfect fit across diverse Android device sizes and aspect ratios.
-- **NEW:** Introduced **Easy Craps** mode, streamlining the game by eliminating the need for Place/Buy bets.
+- **NEW:** Added **Easy Craps** mode, streamlining the game by eliminating the need for Place/Buy bets.
+- **NEW:** Added **Performance Tracking** to monitor your "Highest Win Percentage" and session trends.
+- **NEW:** Added **Session Analytics** to view "Average Plays per Session" and other statistics to gauge bankroll longevity.
 
 ### v1.9
 - **NEW:** Integrated **Google Play Billing** for the Pro Upgrade.
@@ -52,10 +54,9 @@ I am actively developing the following features to make Simple Craps the ultimat
 ### 🎮 New Game Types
 - **Expanded Betting:** Continued refinement of Standard/Crapless modes and adding missing bets like **Repeaters**.
 
-### 📊 Advanced Statistics
-- **Performance Tracking:** Monitor your "Highest Win Percentage" and session trends.
-- **Session Analytics:** View "Average Plays per Session" and "Time Played" to gauge bankroll longevity.
-- **Bet Efficiency:** A detailed breakdown of which bet types provide your highest returns.
+### 📊 Tips
+
+- **Bet Tab Tips:** Add a tips section to each tab that can be turned on in the settings.
 
 ### 🎨 UI/UX Improvements
 - **Quick Navigation:** Optional "Screen Jump" to return to the main betting area immediately after a roll.
