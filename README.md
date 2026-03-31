@@ -11,6 +11,7 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 - **🎰 Authentic Gameplay:** Complete support for Pass Line, Don't Pass, Come, Don't Come, Place, Buy, Lay, Hardways, and Proposition bets.
 - **🔄 Game Modes:** Seamlessly toggle between **Standard**, **Crapless**, and **Easy Craps** variants.
 - **⚖️ True Odds:** Mathematically accurate payouts, including commissions (vig) for Buy and Lay bets.
+- **📘 Strategies & Tips:** Contextual strategy guides for every betting tab to help you master the game.
 - **📱 Modern UI:** A sleek, edge-to-edge Jetpack Compose interface that adapts beautifully to any screen size.
 - **🔒 Privacy First:** No accounts, no trackers, and no data collection. All game data and roll history stay securely on your device.
 - **💎 Fair Ad Model:** Play ad-free with a $50 bankroll reset, or watch a single rewarded ad for a "High Roller" bankroll.
@@ -27,6 +28,13 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 ---
 
 ## 📝 Release History
+
+### v1.11
+- **NEW:** Added **Strategies & Tips** overlay for every betting tab. Learn classic systems like the Three-Point Molly, Iron Cross, and more directly while playing.
+- **NEW:** Added **Persistent Bankroll & Bets**. Your balance and active bets are now saved automatically and restored when you reopen the app.
+- **NEW:** Added **Data Deletion** option in Settings. Users can now permanently erase all local app data and statistics directly from the device.
+- **IMPROVED:** Added **System Font Override** to prevent layout distortion on devices with large accessibility font settings.
+- **IMPROVED:** Refined **Bankruptcy Protection**; if your total value (bank + bets) falls below $50, the app will automatically reset to a fresh $50 bankroll.
 
 ### v1.10
 - **NEW:** Added **Screen Scaling** to ensure a perfect fit across diverse Android device sizes and aspect ratios.
@@ -54,12 +62,9 @@ I am actively developing the following features to make Simple Craps the ultimat
 ### 🎮 New Game Types
 - **Expanded Betting:** Continued refinement of Standard/Crapless modes and adding missing bets like **Repeaters**.
 
-### 📊 Tips
-
-- **Bet Tab Tips:** Add a tips section to each tab that can be turned on in the settings.
-
 ### 🎨 UI/UX Improvements
 - **Quick Navigation:** Optional "Screen Jump" to return to the main betting area immediately after a roll.
+- **Visual Enhancements:** More detailed animations for chip placement and win celebrations.
 
 ---
 *Created and maintained by Simple Craps.*
