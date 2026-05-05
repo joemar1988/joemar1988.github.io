@@ -29,12 +29,38 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 
 ## 📝 Release History
 
+### v1.14
+- **NEW**: Added **Last Roll Performance**. Review your last 2 rolls from point to 7 out and see how you did.
+- **NEW**: Added **Luck Color Coding**. Roll percentages are now color-coded (Green for lucky, Red for unlucky) relative to theoretical probability, with 7s being opposite.
+- **NEW**: Added **Odds Limit Setting**. Toggle between different odds limits (3x-4x-5x, 10x) for Pass and Come bets.
+- **NEW**: Added **Field 12 Payout Setting**. Toggle Field payout on 12 (3:1).
+- **IMPROVED**: Refined **All-Time Records**. Session-based records (like "Most Rolls Without 7") now update only upon session finalization (manual reset) for greater accuracy and purpose-driven practice.
+- **IMPROVED**: Refined **Statistics UI**. Merged redundant roll records into a cleaner, more focused layout that prioritizes your longest hot streaks.
+
+### v1.13
+- **NEW:** Added **Professional Analytics Heatmap**. View a color-coded frequency distribution of your last 100 rolls (Hot/Warm/Avg/Cool/Cold) compared to theoretical probability.
+- **NEW:** Added **Streak Tracking**. Monitor "Rolls Since Last 7" in real-time and compete against your all-time record for the longest "hot streak" without a 7.
+- **NEW:** Added **Upgrade Prompt** in the Refresh Bankroll menu for a quicker, more convenient path to the Pro version.
+- **FIXED:** Corrected **ATS (All-Tall-Small) Logic**. Bonus bets now correctly clear from the table immediately upon a 7-out, matching authentic casino rules.
+- **FIXED:** Resolved **Don't Come Payout Bug**. Corrected the math for established points on the Don't Come line; the bet now correctly loses when the point hits and wins only on a 7-out.
+- **IMPROVED:** Standardized **Dialog UI**. Refined the Strategies, Tips, and Stats windows with a consistent professional layout featuring fixed headers and rounded surfaces.
+- **IMPROVED:** Enhanced **Data Persistence**. Roll history and advanced statistics now persist across app restarts using serialized JSON storage.
+- **IMPROVED:** Updated **SDK Compatibility**. Aligned project with `compileSdk 36` to support the latest AndroidX library metadata requirements.
+
+### v1.12
+- **NEW:** Added **Custom Reset Amount**. All players can now set and save their own preferred bankroll refresh value directly within the reset menu for faster, more personalized practicing.
+- **NEW:** Added **PRO Interface Debug Toggle**. Developers can now seamlessly switch between PRO and non-PRO interface modes in debug builds to test both user experiences.
+- **IMPROVED:** Redesigned **Reset Menu** UI with a new two-row button layout. Featured options like "Default" and "50" are now prioritized, followed by an organized grid of high-roller selections.
+- **IMPROVED:** Refined custom input logic; the custom amount field now defaults to empty, and reset actions are enabled only when a valid positive value is entered.
+
 ### v1.11
 - **NEW:** Added **Strategies & Tips** overlay for every betting tab. Learn classic systems like the Three-Point Molly, Iron Cross, and more directly while playing.
 - **NEW:** Added **Persistent Bankroll & Bets**. Your balance and active bets are now saved automatically and restored when you reopen the app.
 - **NEW:** Added **Data Deletion** option in Settings. Users can now permanently erase all local app data and statistics directly from the device.
+- **IMPROVED:** Redesigned **Settings & Statistics** menus with fixed "sticky" headers and footers for a smoother, more professional navigation experience.
+- **IMPROVED:** Added **In-App Rating Button** to the home screen, highlighting our "no-interruption" philosophy and allowing users to easily support the app.
 - **IMPROVED:** Added **System Font Override** to prevent layout distortion on devices with large accessibility font settings.
-- **IMPROVED:** Refined **Bankruptcy Protection**; if your total value (bank + bets) falls below $50, the app will automatically reset to a fresh $50 bankroll.
+- **IMPROVED:** Refined **Bankruptcy Protection**; if your total value (bank + bets) falls below $50, the app will automatically reset to a fresh $50 bankroll if closed and reopened.
 
 ### v1.10
 - **NEW:** Added **Screen Scaling** to ensure a perfect fit across diverse Android device sizes and aspect ratios.
@@ -59,10 +85,16 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 
 I am actively developing the following features to make Simple Craps the ultimate practice tool:
 
-### 🎮 New Game Types
-- **Expanded Betting:** Continued refinement of Standard/Crapless modes and adding missing bets like **Repeaters**.
+### 🎮 Advanced Simulation & Logic
+- **Strategy Assistance:** An interactive guide that highlights optimal betting placements based on selected systems (Iron Cross, Three-Point Molly, etc.).
+- **Stickman Calls:** High-quality audio implementation for authentic "Bubble Craps" atmosphere.
+
+### 📊 Professional Analytics
+- **Cloud Data Export:** Securely export roll history and session logs to Google Drive for advanced personal analysis.
 
 ### 🎨 UI/UX Improvements
+- **Tab Layout Manager:** A new customization tool to rearrange betting tab order or enable a **Split-View Mode**, allowing users to stack two betting areas (e.g., Pass Line and Hardways) on screen simultaneously.
+- **Landscape Support:** A dedicated horizontal layout to provide a more immersive "Wide-Table" experience, especially for tablet users.
 - **Quick Navigation:** Optional "Screen Jump" to return to the main betting area immediately after a roll.
 - **Visual Enhancements:** More detailed animations for chip placement and win celebrations.
 
