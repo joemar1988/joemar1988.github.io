@@ -29,6 +29,10 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 
 ## 📝 Release History
 
+### v1.15
+- **NEW**: **Stats Persistence**. The Statistics dialog now remembers your last active tab (Hand/Session/All-Time) across app restarts.
+- **IMPROVED**: **Come/Don't Come Stacking**. Multiple chips of any denomination can now be placed on the Come and Don't Come bars before a point is established.
+
 ### v1.14
 - **NEW**: Added **Last Roll Performance**. Review your last 2 rolls from point to 7 out and see how you did.
 - **NEW**: Added **Luck Color Coding**. Roll percentages are now color-coded (Green for lucky, Red for unlucky) relative to theoretical probability, with 7s being opposite.
@@ -93,6 +97,8 @@ I am actively developing the following features to make Simple Craps the ultimat
 - **Cloud Data Export:** Securely export roll history and session logs to Google Drive for advanced personal analysis.
 
 ### 🎨 UI/UX Improvements
+- **Unified Come/Don't Come Tab:** Merge Come and Don't Come betting areas into a single tab for more efficient navigation, featuring both betting bars at the top and a combined list of established point bets below.
+- **Compact Established Bets:** Redesign the established bet layout to use a more space-efficient 2-bets-per-line grid, optimizing screen real estate for players with multiple active points.
 - **Tab Layout Manager:** A new customization tool to rearrange betting tab order or enable a **Split-View Mode**, allowing users to stack two betting areas (e.g., Pass Line and Hardways) on screen simultaneously.
 - **Landscape Support:** A dedicated horizontal layout to provide a more immersive "Wide-Table" experience, especially for tablet users.
 - **Quick Navigation:** Optional "Screen Jump" to return to the main betting area immediately after a roll.
