@@ -1,4 +1,4 @@
-# Simple Craps 🎲
+# Simple Craps
 
 [![Android API](https://img.shields.io/badge/API-23%2B-brightgreen.svg)](https://android-arsenal.com/api?level=23)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.1-blue.svg)](https://kotlinlang.org)
@@ -6,28 +6,50 @@
 
 A professional-grade Craps simulator for Android, modeled after modern "Bubble Craps" electronic machines. Perfect for practicing strategies with authentic odds, full betting support, and a transparent, player-friendly ad model.
 
-## ✨ Key Features
+## Key Features
 
-- **🎰 Authentic Gameplay:** Complete support for Pass Line, Don't Pass, Come, Don't Come, Place, Buy, Lay, Hardways, and Proposition bets.
-- **🔄 Game Modes:** Seamlessly toggle between **Standard**, **Crapless**, and **Easy Craps** variants.
-- **⚖️ True Odds:** Mathematically accurate payouts, including commissions (vig) for Buy and Lay bets.
-- **📘 Strategies & Tips:** Contextual strategy guides for every betting tab to help you master the game.
-- **📱 Modern UI:** A sleek, edge-to-edge Jetpack Compose interface that adapts beautifully to any screen size.
-- **🔒 Privacy First:** No accounts, no trackers, and no data collection. All game data and roll history stay securely on your device.
-- **💎 Fair Ad Model:** Play ad-free with a $50 bankroll reset, or watch a single rewarded ad for a "High Roller" bankroll.
-- **🏆 Pro Upgrade ($2.99):** A one-time purchase to remove the rewarded ad requirement forever and unlock a premium, ad-free experience.
+- **Authentic Gameplay:** Complete support for Pass Line, Don't Pass, Come, Don't Come, Place, Buy, Lay, Hardways, and Proposition bets.
+- **Game Modes:** Seamlessly toggle between **Classic**, **Crapless**, and **Easy Craps** variants.
+- **True Odds:** Mathematically accurate payouts, including commissions (vig) for Buy and Lay bets.
+- **Strategies & Tips:** Contextual strategy guides for every betting tab to help you master the game.
+- **Modern UI:** A sleek, edge-to-edge Jetpack Compose interface that adapts beautifully to any screen size.
+- **Privacy First:** No accounts, no trackers, and no data collection. All game data and roll history stay securely on your device.
+- **Fair Ad Model:** Play ad-free with a $50 bankroll reset, or watch a single rewarded ad for a "High Roller" bankroll.
+- **Pro Upgrade ($2.99):** A one-time purchase to remove the rewarded ad requirement forever and unlock a premium, ad-free experience.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Language:** Kotlin 2.1
-- **UI Framework:** Jetpack Compose (Material 3)
-- **Billing:** Google Play Billing Library 7.1
-- **Ads:** Google Mobile Ads (AdMob)
+- **UI Framework:** Jetpack Compose (Material 2)
+- **Billing:** Google Play Billing Library 7.1.1
+- **Ads:** Google Mobile Ads (AdMob) 25.0
 - **Architecture:** MVVM with State-driven UI
 
 ---
 
-## 📝 Release History
+## Release History
+
+### v1.18
+- **IMPROVED: Optimized App Size**. Re-enabled R8 Full Mode to reduce the APK size back to 4MB while maintaining full stability.
+- **IMPROVED: Build Performance**. Increased JVM memory allocation to 12GB to leverage high-performance 32GB hardware for faster, more reliable compilation.
+- **FIXED: Chip Selection Persistence**. Resolved a bug where changing a custom chip value would fail to update the active selection.
+- **FIXED: Repeat Button Logic**. The REPEAT button now intelligently disables and dims when funds are insufficient for the previous roll's strategy.
+
+### v1.17
+- **NEW: Quick Actions & Strategy Tools**. Added dedicated **UNDO**, **REPEAT**, and **Bulk Betting** (Place/Buy/Press All) shortcuts. Complex actions are intelligently grouped so they can be reverted with a single **UNDO**.
+- **NEW: Customizable Betting Unit**. Added a 6th customizable lime green chip to the selection bar. Set and save your own preferred unit (e.g., $7) for faster strategy execution.
+- **IMPROVED: Professional Table UI**. Redesigned the top navigation, game mode selection, and control bar for perfect alignment, higher contrast, and better vertical readability.
+- **IMPROVED: Authentic Logic & Help**. Standardized **Come/Don't Come** rules across all game modes and added informational tooltips ("i" icons) to explain specific mechanics and contract bet rules.
+- **IMPROVED: Enhanced Realism & Feedback**. Updated dice and felt textures for a realistic table appearance. Added tactile pressed-state feedback to all landing screen and main interaction buttons.
+- **IMPROVED: Smooth Navigation**. The Statistics menu now supports natural left/right swiping between the Hand, Session, and All-Time tabs.
+
+### v1.16
+- **NEW**: **Unified Come Points**. Merged established Come and Don't Come point bets into a single, compact 2-per-line grid on the Come tab.
+- **NEW**: **Hop Bets**. Added a curated suite of Hop bets (one-roll bets on specific combinations) to the new **One-Roll** tab.
+- **IMPROVED**: **Tab Reorganization**. Replaced "Hardways" and "Other" with **One-Roll** (Hop & Prop bets) and **Bonus & Hard** (ATS & Hardways) for a more logical betting flow.
+- **IMPROVED**: **Enhanced Layouts**. Redesigned the Against tab with an Any 7 hedge shortcut and optimized the One-Roll tab with prominent Field/Any 7/Any Craps targets.
+- **IMPROVED**: **Come Tab Layout**. The Come tab now features both Come and Don't Come betting bars at the top for faster access.
+- **IMPROVED**: **Cleaned Navigation**. Removed redundant betting bars from the Against tab to maintain focus.
 
 ### v1.15
 - **NEW**: **Stats Persistence**. The Statistics dialog now remembers your last active tab (Hand/Session/All-Time) across app restarts.
@@ -78,31 +100,28 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 - **NEW:** Expanded customization with additional dice and felt colors in Settings.
 
 ### v1.8
-- **NEW:** Added "Standard" and "Crapless" mode toggles (Pucks).
+- **NEW:** Added "Classic" and "Crapless" mode toggles (Pucks).
 - **IMPROVED:** Interactive tutorial for new players.
 - **IMPROVED:** Full compliance with **Android 15** edge-to-edge requirements.
 - **LEGAL:** Updated Privacy Policy and Terms of Service transparency.
 
 ---
 
-## 🚀 Roadmap
+## Roadmap
 
 I am actively developing the following features to make Simple Craps the ultimate practice tool:
 
-### 🎮 Advanced Simulation & Logic
+### Advanced Simulation & Logic
 - **Strategy Assistance:** An interactive guide that highlights optimal betting placements based on selected systems (Iron Cross, Three-Point Molly, etc.).
 - **Stickman Calls:** High-quality audio implementation for authentic "Bubble Craps" atmosphere.
 
-### 📊 Professional Analytics
+### Professional Analytics
 - **Cloud Data Export:** Securely export roll history and session logs to Google Drive for advanced personal analysis.
 
-### 🎨 UI/UX Improvements
-- **Unified Come/Don't Come Tab:** Merge Come and Don't Come betting areas into a single tab for more efficient navigation, featuring both betting bars at the top and a combined list of established point bets below.
-- **Compact Established Bets:** Redesign the established bet layout to use a more space-efficient 2-bets-per-line grid, optimizing screen real estate for players with multiple active points.
+### UI/UX Improvements
 - **Tab Layout Manager:** A new customization tool to rearrange betting tab order or enable a **Split-View Mode**, allowing users to stack two betting areas (e.g., Pass Line and Hardways) on screen simultaneously.
 - **Landscape Support:** A dedicated horizontal layout to provide a more immersive "Wide-Table" experience, especially for tablet users.
 - **Quick Navigation:** Optional "Screen Jump" to return to the main betting area immediately after a roll.
-- **Visual Enhancements:** More detailed animations for chip placement and win celebrations.
 
 ---
 *Created and maintained by Simple Craps.*
