@@ -4,7 +4,7 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.1-blue.svg)](https://kotlinlang.org)
 [![Compose](https://img.shields.io/badge/Jetpack-Compose-orange.svg)](https://developer.android.com/jetpack/compose)
 
-A professional-grade Craps simulator for Android, modeled after modern "Bubble Craps" electronic machines. Perfect for practicing strategies with authentic odds, full betting support, and a transparent, player-friendly ad model.
+A professional-grade Craps simulator for Android, modeled after modern "Bubble Craps" electronic machines. Perfect for practicing strategies with authentic odds, full betting support, and a transparent, player-friendly advertising model.
 
 ## Key Features
 
@@ -30,11 +30,11 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 ## Release History
 
 ### v1.18
-- **IMPROVED: Optimized App Size**. Re-enabled R8 Full Mode to reduce the APK size back to 4MB while maintaining full stability.
-- **IMPROVED: Build Performance**. Increased JVM memory allocation to 12GB to leverage high-performance 32GB hardware for faster, more reliable compilation.
-- **FIXED: Chip Selection Persistence**. Resolved a bug where changing a custom chip value would fail to update the active selection.
-- **FIXED: Repeat Button Logic**. The REPEAT button now intelligently disables and dims when funds are insufficient for the previous roll's strategy.
-
+- **NEW: Analytics Support**. Integrated Firebase Analytics for secure, anonymous session and event tracking to improve future game balancing.
+- **IMPROVED: SDK & Build Maintenance**. Updated core components for enhanced privacy compliance. Enabled R8 Full Mode and optimized Gradle for a smaller, faster app.
+- **IMPROVED: Statistics Clarity**. Simplified roll frequency columns (ODDS, SESS %, ALL %) and cleaned up table headers for better readability.
+- **IMPROVED: Refresh Optimization**. Redesigned the bankroll refresh logic with on-demand loading, a transparent status timer, and a "Free Reset" fallback for better reliability.
+- 
 ### v1.17
 - **NEW: Quick Actions & Strategy Tools**. Added dedicated **UNDO**, **REPEAT**, and **Bulk Betting** (Place/Buy/Press All) shortcuts. Complex actions are intelligently grouped so they can be reverted with a single **UNDO**.
 - **NEW: Customizable Betting Unit**. Added a 6th customizable lime green chip to the selection bar. Set and save your own preferred unit (e.g., $7) for faster strategy execution.
@@ -63,47 +63,13 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 - **IMPROVED**: Refined **All-Time Records**. Session-based records (like "Most Rolls Without 7") now update only upon session finalization (manual reset) for greater accuracy and purpose-driven practice.
 - **IMPROVED**: Refined **Statistics UI**. Merged redundant roll records into a cleaner, more focused layout that prioritizes your longest hot streaks.
 
-### v1.13
-- **NEW:** Added **Professional Analytics Heatmap**. View a color-coded frequency distribution of your last 100 rolls (Hot/Warm/Avg/Cool/Cold) compared to theoretical probability.
-- **NEW:** Added **Streak Tracking**. Monitor "Rolls Since Last 7" in real-time and compete against your all-time record for the longest "hot streak" without a 7.
-- **NEW:** Added **Upgrade Prompt** in the Refresh Bankroll menu for a quicker, more convenient path to the Pro version.
-- **FIXED:** Corrected **ATS (All-Tall-Small) Logic**. Bonus bets now correctly clear from the table immediately upon a 7-out, matching authentic casino rules.
-- **FIXED:** Resolved **Don't Come Payout Bug**. Corrected the math for established points on the Don't Come line; the bet now correctly loses when the point hits and wins only on a 7-out.
-- **IMPROVED:** Standardized **Dialog UI**. Refined the Strategies, Tips, and Stats windows with a consistent professional layout featuring fixed headers and rounded surfaces.
-- **IMPROVED:** Enhanced **Data Persistence**. Roll history and advanced statistics now persist across app restarts using serialized JSON storage.
-- **IMPROVED:** Updated **SDK Compatibility**. Aligned project with `compileSdk 36` to support the latest AndroidX library metadata requirements.
-
-### v1.12
-- **NEW:** Added **Custom Reset Amount**. All players can now set and save their own preferred bankroll refresh value directly within the reset menu for faster, more personalized practicing.
-- **NEW:** Added **PRO Interface Debug Toggle**. Developers can now seamlessly switch between PRO and non-PRO interface modes in debug builds to test both user experiences.
-- **IMPROVED:** Redesigned **Reset Menu** UI with a new two-row button layout. Featured options like "Default" and "50" are now prioritized, followed by an organized grid of high-roller selections.
-- **IMPROVED:** Refined custom input logic; the custom amount field now defaults to empty, and reset actions are enabled only when a valid positive value is entered.
-
-### v1.11
-- **NEW:** Added **Strategies & Tips** overlay for every betting tab. Learn classic systems like the Three-Point Molly, Iron Cross, and more directly while playing.
-- **NEW:** Added **Persistent Bankroll & Bets**. Your balance and active bets are now saved automatically and restored when you reopen the app.
-- **NEW:** Added **Data Deletion** option in Settings. Users can now permanently erase all local app data and statistics directly from the device.
-- **IMPROVED:** Redesigned **Settings & Statistics** menus with fixed "sticky" headers and footers for a smoother, more professional navigation experience.
-- **IMPROVED:** Added **In-App Rating Button** to the home screen, highlighting our "no-interruption" philosophy and allowing users to easily support the app.
-- **IMPROVED:** Added **System Font Override** to prevent layout distortion on devices with large accessibility font settings.
-- **IMPROVED:** Refined **Bankruptcy Protection**; if your total value (bank + bets) falls below $50, the app will automatically reset to a fresh $50 bankroll if closed and reopened.
-
-### v1.10
-- **NEW:** Added **Screen Scaling** to ensure a perfect fit across diverse Android device sizes and aspect ratios.
-- **NEW:** Added **Easy Craps** mode, streamlining the game by eliminating the need for Place/Buy bets.
-- **NEW:** Added **Performance Tracking** to monitor your "Highest Win Percentage" and session trends.
-- **NEW:** Added **Session Analytics** to view "Average Plays per Session" and other statistics to gauge bankroll longevity.
-
-### v1.9
-- **NEW:** Integrated **Google Play Billing** for the Pro Upgrade.
-- **NEW:** Refined betting descriptors for **ATS (All-Tall-Small)** bets.
-- **NEW:** Expanded customization with additional dice and felt colors in Settings.
-
-### v1.8
-- **NEW:** Added "Classic" and "Crapless" mode toggles (Pucks).
-- **IMPROVED:** Interactive tutorial for new players.
-- **IMPROVED:** Full compliance with **Android 15** edge-to-edge requirements.
-- **LEGAL:** Updated Privacy Policy and Terms of Service transparency.
+### Legacy Versions (v1.8 - v1.13)
+- **v1.13**: Added Analytics Heatmap, Streak Tracking, and corrected ATS & Don't Come logic.
+- **v1.12**: Added Custom Reset Amount and a redesigned, prioritized Reset Menu UI.
+- **v1.11**: Added Strategies & Tips overlay, Persistent Bankroll, and Data Deletion options.
+- **v1.10**: Added Screen Scaling, Easy Craps mode, and Session/Performance analytics.
+- **v1.9**: Integrated Google Play Billing for Pro Upgrade and refined ATS betting descriptors.
+- **v1.8**: Added Classic/Crapless toggles, Interactive Tutorial, and Android 15 compatibility.
 
 ---
 
@@ -113,7 +79,7 @@ I am actively developing the following features to make Simple Craps the ultimat
 
 ### Advanced Simulation & Logic
 - **Strategy Assistance:** An interactive guide that highlights optimal betting placements based on selected systems (Iron Cross, Three-Point Molly, etc.).
-- **Stickman Calls:** High-quality audio implementation for authentic "Bubble Craps" atmosphere.
+- **Audio Calls:** High-quality audio implementation for authentic "Bubble Craps" atmosphere.
 
 ### Professional Analytics
 - **Cloud Data Export:** Securely export roll history and session logs to Google Drive for advanced personal analysis.
