@@ -29,12 +29,19 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 
 ## Release History
 
+### v1.19
+- **NEW: "About Simple Craps" Section**. Added a dedicated "About" dialog in the top header that outlines the app\'s core philosophy, strategy-first focus, and the authentic "Risk vs Reward" ad model.
+- **NEW: Table Limits & Denominations UI**. Replaced long descriptions in the Refresh Menu with a scannable table mapping bankroll ranges to their corresponding minimum chip values.
+- **FIXED: Ad Lifecycle & Impressions**. Resolved a critical bug where the rewarded ad object was not cleared on early dismissal, preventing subsequent loads. Integrated full-lifecycle Firebase Analytics (load, show, dismiss, impression) for robust monitoring.
+- **IMPROVED: Analytics Reliability**. Added explicit session initialization and ProGuard/R8 protection rules to ensure consistent tracking of active users.
+- **IMPROVED: Philosophy & Purpose Documentation**. Formalized our commitment to pure simulation, realistic table limits, and respecting the player\'s time as a premier practicing tool.
+
 ### v1.18
 - **NEW: Analytics Support**. Integrated Firebase Analytics for secure, anonymous session and event tracking to improve future game balancing.
 - **IMPROVED: SDK & Build Maintenance**. Updated core components for enhanced privacy compliance. Enabled R8 Full Mode and optimized Gradle for a smaller, faster app.
 - **IMPROVED: Statistics Clarity**. Simplified roll frequency columns (ODDS, SESS %, ALL %) and cleaned up table headers for better readability.
 - **IMPROVED: Refresh Optimization**. Redesigned the bankroll refresh logic with on-demand loading, a transparent status timer, and a "Free Reset" fallback for better reliability.
-- 
+
 ### v1.17
 - **NEW: Quick Actions & Strategy Tools**. Added dedicated **UNDO**, **REPEAT**, and **Bulk Betting** (Place/Buy/Press All) shortcuts. Complex actions are intelligently grouped so they can be reverted with a single **UNDO**.
 - **NEW: Customizable Betting Unit**. Added a 6th customizable lime green chip to the selection bar. Set and save your own preferred unit (e.g., $7) for faster strategy execution.
@@ -51,19 +58,9 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 - **IMPROVED**: **Come Tab Layout**. The Come tab now features both Come and Don't Come betting bars at the top for faster access.
 - **IMPROVED**: **Cleaned Navigation**. Removed redundant betting bars from the Against tab to maintain focus.
 
-### v1.15
-- **NEW**: **Stats Persistence**. The Statistics dialog now remembers your last active tab (Hand/Session/All-Time) across app restarts.
-- **IMPROVED**: **Come/Don't Come Stacking**. Multiple chips of any denomination can now be placed on the Come and Don't Come bars before a point is established.
-
-### v1.14
-- **NEW**: Added **Last Roll Performance**. Review your last 2 rolls from point to 7 out and see how you did.
-- **NEW**: Added **Luck Color Coding**. Roll percentages are now color-coded (Green for lucky, Red for unlucky) relative to theoretical probability, with 7s being opposite.
-- **NEW**: Added **Odds Limit Setting**. Toggle between different odds limits (3x-4x-5x, 10x) for Pass and Come bets.
-- **NEW**: Added **Field 12 Payout Setting**. Toggle Field payout on 12 (3:1).
-- **IMPROVED**: Refined **All-Time Records**. Session-based records (like "Most Rolls Without 7") now update only upon session finalization (manual reset) for greater accuracy and purpose-driven practice.
-- **IMPROVED**: Refined **Statistics UI**. Merged redundant roll records into a cleaner, more focused layout that prioritizes your longest hot streaks.
-
-### Legacy Versions (v1.8 - v1.13)
+### Legacy Versions (v1.8 - v1.15)
+- **v1.15**: Added Stats Persistence and Come/Don't Come chip stacking.
+- **v1.14**: Added Last Roll Performance, Luck Color Coding, Odds/Field settings, and Statistics refinements.
 - **v1.13**: Added Analytics Heatmap, Streak Tracking, and corrected ATS & Don't Come logic.
 - **v1.12**: Added Custom Reset Amount and a redesigned, prioritized Reset Menu UI.
 - **v1.11**: Added Strategies & Tips overlay, Persistent Bankroll, and Data Deletion options.
@@ -83,11 +80,14 @@ I am actively developing the following features to make Simple Craps the ultimat
 
 ### Professional Analytics
 - **Cloud Data Export:** Securely export roll history and session logs to Google Drive for advanced personal analysis.
-
+- **Detailed Roll Profitability:** Track **Money Won vs. Money Lost per roll** to visualize volatility and strategy performance over time.
+- **Auto Loading Ads:** Do not autoload ads after an ad is watched.
+- 
 ### UI/UX Improvements
 - **Tab Layout Manager:** A new customization tool to rearrange betting tab order or enable a **Split-View Mode**, allowing users to stack two betting areas (e.g., Pass Line and Hardways) on screen simultaneously.
 - **Landscape Support:** A dedicated horizontal layout to provide a more immersive "Wide-Table" experience, especially for tablet users.
 - **Quick Navigation:** Optional "Screen Jump" to return to the main betting area immediately after a roll.
+- **ATS Grey Out:** Grey out ATS when a point is set.
 
 ---
 *Created and maintained by Simple Craps.*
