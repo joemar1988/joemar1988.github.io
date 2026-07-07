@@ -22,12 +22,18 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 - **Language:** Kotlin 2.1
 - **UI Framework:** Jetpack Compose (Material 2)
 - **Billing:** Google Play Billing Library 7.1.1
-- **Ads:** Google Mobile Ads (AdMob) 25.0
+- **Ads:** Google Mobile Ads (AdMob) 25.3.0 with Meta Mediation
 - **Architecture:** MVVM with State-driven UI
 
 ---
 
 ## Release History
+
+### v1.20
+- **Visual Bet Feedback & Lock Logic**: Added clear visual indicators (red prohibitory icons) and contextual "Bet Locked" explanations for contract bets and unavailable wagers.
+- **Enhanced Ad Mediation**: Switched to a real-time bidding model with **Meta Audience Network** integration for better fill rates and improved battery/data efficiency.
+- **Reliability & Safeguards**: Integrated a 30-second ad fallback timer (auto-granting rewards if ads fail) and a "LOADING..." state with interaction locks to prevent UI ghosting.
+- **Maintenance**: Refined internal ad wrappers and optimized SDK lifecycle for broad Android 6.0 (API 23+) compatibility and memory safety.
 
 ### v1.19
 - **NEW: "About Simple Craps" Section**. Added a dedicated "About" dialog in the top header that outlines the app\'s core philosophy, strategy-first focus, and the authentic "Risk vs Reward" ad model.
