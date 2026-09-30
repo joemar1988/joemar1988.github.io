@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Craps | Player Handbook & Strategy Manual</title>
+    <meta name="description" content="Complete guide to Craps rules, bet types, payouts, strategy systems, game modes, and app settings for Simple Craps.">
+    <style>
+        :root {
+            --bg-felt: #0b2d18;
+            --card-felt: #124626;
+            --card-inner: rgba(0, 0, 0, 0.4);
+            --gold-accent: #FFD700;
+            --gold-hover: #FFE555;
+            --text-light: #F5F5F5;
+            --text-muted: #B0C4DE;
+            --border-gold: rgba(255, 215, 0, 0.4);
+            --border-light: rgba(255, 255, 255, 0.15);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--bg-felt);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #004d25;
+            color: white;
+            text-align: center;
+            padding: 30px 20px 20px;
+            border-bottom: 3px solid var(--gold-accent);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: var(--gold-accent);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        header p {
+            margin: 5px 0 15px;
+            color: var(--text-light);
+            font-size: 1.1em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        nav a {
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 14px;
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+        nav a:hover, nav a.active {
+            background: var(--gold-accent);
+            color: #000;
+            border-color: var(--gold-accent);
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .section-card {
+            background: var(--card-inner);
+            border: 1px solid var(--border-gold);
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: var(--gold-accent);
+            border-bottom: 2px solid var(--border-gold);
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 1.6em;
+        }
+        h3 {
+            color: #FFFFFF;
+            margin-top: 20px;
+            font-size: 1.25em;
+        }
+        p, li {
+            color: var(--text-light);
+            font-size: 1.02em;
+        }
+        .badge {
+            display: inline-block;
+            background: var(--card-felt);
+            color: var(--gold-accent);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            border: 1px solid var(--border-gold);
+            margin-right: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+        th {
+            background: #004d25;
+            color: var(--gold-accent);
+            font-size: 0.95em;
+            text-transform: uppercase;
+        }
+        td {
+            font-size: 0.95em;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .tip-box {
+            background: rgba(0, 77, 37, 0.6);
+            border-left: 4px solid var(--gold-accent);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        .tip-box strong {
+            color: var(--gold-accent);
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #003318;
+            border-top: 2px solid var(--border-gold);
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--gold-accent);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎲 Simple Craps Handbook</h1>
+    <p>Complete Player Manual, Odds Table, Strategy Guide & App Reference</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="handbook.html" class="active">Handbook & Guide</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- 1. CRAPS BASICS -->
+    <div class="section-card">
+        <h2>1. Craps Essentials & Game Flow</h2>
+        <p>Craps is played in rounds determined by the throw of two 6-sided dice. A complete round consists of two distinct phases:</p>
+
+        <h3>A. The Come-Out Roll (Phase 1)</h3>
+        <p>The first roll of a new round is the <strong>Come-Out Roll</strong>. The puck is marked <span class="badge">OFF</span>.</p>
+        <ul>
+            <li><strong>Natural 7 or 11</strong>: Pass Line bets win 1:1. Don't Pass bets lose. The round stays in Come-Out.</li>
+            <li><strong>Craps (2, 3, or 12)</strong>: Pass Line bets lose. Don't Pass wins 1:1 on 2 or 3 (12 pushes/ties). The round stays in Come-Out.</li>
+            <li><strong>Point Numbers (4, 5, 6, 8, 9, 10)</strong>: Establishes the <strong>Point</strong>! The puck flips to <span class="badge">ON</span> and moves to that point number.</li>
+        </ul>
+
+        <h3>B. Point Phase (Phase 2)</h3>
+        <p>Once a Point is established, the shooter continues rolling until one of two events occurs:</p>
+        <ul>
+            <li><strong>Making the Point</strong>: The point number is rolled again. Pass Line bets win 1:1, Pass Odds win true odds, and the puck flips back to <span class="badge">OFF</span> for a new Come-Out roll.</li>
+            <li><strong>Seven Out (7)</strong>: A 7 is rolled before making the point. Pass Line and Place bets lose. Don't Pass wins. The round ends and resets to Come-Out.</li>
+        </ul>
+    </div>
+
+    <!-- 2. GAME MODES -->
+    <div class="section-card">
+        <h2>2. Game Modes Explained</h2>
+        <p>Simple Craps offers four specialized game variants so you can practice under exact casino conditions:</p>
+
+        <h3>Classic Craps</h3>
+        <p>Official casino rules with Pass, Don't Pass, Come, Don't Come, Place, Buy, Lay, Field, Hardways, and Proposition bets with full true odds support.</p>
+
+        <h3>Crapless Craps</h3>
+        <p>A popular modern variant where there are <strong>no Craps numbers</strong> on the Come-Out roll. 2, 3, 11, and 12 join 4, 5, 6, 8, 9, 10 as valid Point numbers. 7 is the sole Come-Out winner. Come bets also establish points on 2, 3, 11, and 12 with true odds up to 6:1.</p>
+
+        <h3>Easy Craps</h3>
+        <p>A streamlined table variant where Place bets are presented in a clean single-tier grid and "Against" (Don't) side bets are disabled for fast, action-packed practice.</p>
+
+        <h3>Betless Rolls & Sevenless Practice</h3>
+        <ul>
+            <li><strong>Betless Rolls</strong>: Enable in Settings to throw dice without active bets to observe streak frequency or warm up.</li>
+            <li><strong>Sevenless Practice ("No 7s")</strong>: Suppresses 7s during practice sessions so you can test how your betting systems perform during long, hot-hand rolls.</li>
+        </ul>
+    </div>
+
+    <!-- 3. BET TYPES & PAYOUTS -->
+    <div class="section-card">
+        <h2>3. Complete Bet Types & Payout Table</h2>
+        <p>All payouts in Simple Craps are verified against mathematical odds tables and 1,000,000-roll stress tests.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Bet Type</th>
+                    <th>Winning Outcome</th>
+                    <th>Payout Ratio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Pass Line</strong></td>
+                    <td>7 or 11 on Come-Out; or making established Point</td>
+                    <td>1:1</td>
+                </tr>
+                <tr>
+                    <td><strong>Don't Pass</strong></td>
+                    <td>2 or 3 on Come-Out (12 Push); or 7 before Point</td>
+                    <td>1:1</td>
+                </tr>
+                <tr>
+                    <td><strong>Pass Odds (4, 10)</strong></td>
+                    <td>Making Point 4 or 10</td>
+                    <td>2:1</td>
+                </tr>
+                <tr>
+                    <td><strong>Pass Odds (5, 9)</strong></td>
+                    <td>Making Point 5 or 9</td>
+                    <td>3:2 (1.5:1)</td>
+                </tr>
+                <tr>
+                    <td><strong>Pass Odds (6, 8)</strong></td>
+                    <td>Making Point 6 or 8</td>
+                    <td>6:5 (1.2:1)</td>
+                </tr>
+                <tr>
+                    <td><strong>Crapless Odds (2, 12)</strong></td>
+                    <td>Making Point 2 or 12</td>
+                    <td>6:1</td>
+                </tr>
+                <tr>
+                    <td><strong>Crapless Odds (3, 11)</strong></td>
+                    <td>Making Point 3 or 11</td>
+                    <td>3:1</td>
+                </tr>
+                <tr>
+                    <td><strong>Place Bet (4, 10)</strong></td>
+                    <td>4 or 10 rolled before 7</td>
+                    <td>9:5</td>
+                </tr>
+                <tr>
+                    <td><strong>Place Bet (5, 9)</strong></td>
+                    <td>5 or 9 rolled before 7</td>
+                    <td>7:5</td>
+                </tr>
+                <tr>
+                    <td><strong>Place Bet (6, 8)</strong></td>
+                    <td>6 or 8 rolled before 7</td>
+                    <td>7:6</td>
+                </tr>
+                <tr>
+                    <td><strong>Buy Bet (4, 10)</strong></td>
+                    <td>4 or 10 rolled before 7 (True Odds - 5% vig on win)</td>
+                    <td>2:1</td>
+                </tr>
+                <tr>
+                    <td><strong>Lay Bet (4, 10)</strong></td>
+                    <td>7 rolled before 4 or 10 (True Odds - 5% vig on win)</td>
+                    <td>1:2</td>
+                </tr>
+                <tr>
+                    <td><strong>Field Bet</strong></td>
+                    <td>2, 3, 4, 9, 10, 11, 12 on next roll (2/12 pay 2:1 or 3:1)</td>
+                    <td>1:1 (2:1 / 3:1 on 2/12)</td>
+                </tr>
+                <tr>
+                    <td><strong>Hardways (4, 10)</strong></td>
+                    <td>2+2 or 5+5 rolled before 7 or easy total</td>
+                    <td>7:1</td>
+                </tr>
+                <tr>
+                    <td><strong>Hardways (6, 8)</strong></td>
+                    <td>3+3 or 4+4 rolled before 7 or easy total</td>
+                    <td>9:1</td>
+                </tr>
+                <tr>
+                    <td><strong>Any 7 / Hop 7</strong></td>
+                    <td>7 on next single roll</td>
+                    <td>4:1 (5 for 1)</td>
+                </tr>
+                <tr>
+                    <td><strong>Any Craps</strong></td>
+                    <td>2, 3, or 12 on next single roll</td>
+                    <td>7:1 (8 for 1)</td>
+                </tr>
+                <tr>
+                    <td><strong>Yo 11 / Craps 3</strong></td>
+                    <td>11 or 3 on next single roll</td>
+                    <td>15:1 (16 for 1)</td>
+                </tr>
+                <tr>
+                    <td><strong>Craps 2 / Craps 12</strong></td>
+                    <td>2 or 12 on next single roll</td>
+                    <td>30:1 (31 for 1)</td>
+                </tr>
+                <tr>
+                    <td><strong>ATS (All Small / All Tall)</strong></td>
+                    <td>All small (2-6) or all tall (8-12) rolled before 7</td>
+                    <td>34:1</td>
+                </tr>
+                <tr>
+                    <td><strong>ATS (Make 'Em All)</strong></td>
+                    <td>All numbers (2-6 and 8-12) rolled before 7</td>
+                    <td>174:1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 4. POPULAR STRATEGIES -->
+    <div class="section-card">
+        <h2>4. Popular Craps Betting Systems</h2>
+
+        <h3>A. The Three-Point Molly</h3>
+        <p>A conservative, high-odds system designed to capitalize on hot shooters while minimizing house edge:</p>
+        <ol>
+            <li>Place a <strong>Pass Line</strong> bet on the Come-Out.</li>
+            <li>Once a Point is set, take <strong>Max Pass Odds</strong>.</li>
+            <li>Place a <strong>Come</strong> bet on the next roll. When established, take <strong>Max Come Odds</strong>.</li>
+            <li>Place a second <strong>Come</strong> bet to maintain 3 active points on the table (Pass + 2 Come points).</li>
+        </ol>
+
+        <h3>B. The Iron Cross</h3>
+        <p>A high-frequency action strategy that wins on 30 out of 36 possible dice combinations (every number except 7):</p>
+        <ol>
+            <li>Place <strong>Place 5</strong>, <strong>Place 6</strong>, and <strong>Place 8</strong>.</li>
+            <li>Place a <strong>Field Bet</strong> on every roll.</li>
+            <li>On any 2, 3, 4, 9, 10, 11, 12 roll, the Field wins. On 5, 6, 8, the Place bet wins (collect profit and replace the Field).</li>
+        </ol>
+
+        <div class="tip-box">
+            <strong>Strategy Tip:</strong> Use Simple Craps' built-in <strong>Preset Saving</strong> or <strong>Repeat Bets</strong> button to quickly re-load your favorite setup after every round!
+        </div>
+    </div>
+
+    <!-- 5. APP CONTROLS & SETTINGS -->
+    <div class="section-card">
+        <h2>5. App Navigation & Settings Reference</h2>
+
+        <h3>Full Table View vs Tabbed View</h3>
+        <p>Simple Craps provides two UI layout modes available in the Settings menu:</p>
+        <ul>
+            <li><strong>Full Table View</strong>: A 2D zoomable Full Craps Table layout that displays the entire feltspread. Supports 2D panning, pinch-to-zoom, and instant zoom-to-fit controls (↔ Fit Width, ↕ Fit Height).</li>
+            <li><strong>Tabbed View</strong>: Traditional tabbed interface categorized into Come, Against, Place & Buy, Hardways, One-Roll, and ATS tabs.</li>
+        </ul>
+
+        <h3>Custom Chips & Bankroll Resets</h3>
+        <ul>
+            <li><strong>Custom Chips</strong>: Customize up to two chip slots in the Settings menu to match your preferred betting units (e.g. $10, $15, $25, $100).</li>
+            <li><strong>Bankroll Resets</strong>: Reset your bankroll at any time to $50, $100, $500, or custom amounts. Regular resets are ad-free; High Roller resets are supported by rewarded ads or unlocked permanently via Pro Upgrade.</li>
+        </ul>
+
+        <h3>State Persistence</h3>
+        <p>Your session bankroll, active bets, established points, puck state, last roll, and statistics stay saved on your device so you can close the app and resume right where you left off!</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Simple Craps. Built for strategy enthusiasts.</p>
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="handbook.html">Handbook & Guide</a> |
+        <a href="privacy-policy.html">Privacy Policy</a> |
+        <a href="terms-of-service.html">Terms of Service</a>
+    </p>
+</footer>
+
+</body>
+</html>

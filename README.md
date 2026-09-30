@@ -1,6 +1,6 @@
 # Simple Craps
 
-[![Android API](https://img.shields.io/badge/API-23%2B-brightgreen.svg)](https://android-arsenal.com/api?level=23)
+[![Android API](https://img.shields.io/badge/API-24%2B-brightgreen.svg)](https://android-arsenal.com/api?level=24)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.1-blue.svg)](https://kotlinlang.org)
 [![Compose](https://img.shields.io/badge/Jetpack-Compose-orange.svg)](https://developer.android.com/jetpack/compose)
 
@@ -10,61 +10,73 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 
 - **Authentic Gameplay:** Complete support for Pass Line, Don't Pass, Come, Don't Come, Place, Buy, Lay, Hardways, and Proposition bets.
 - **Game Modes:** Seamlessly toggle between **Classic**, **Crapless**, and **Easy Craps** variants.
-- **Practice Mode:** Enable "Betless Rolls" in settings to throw dice without active bets, ideal for testing strategies or tracking streaks.
+- **Full Table View:** Toggle between traditional betting tabs and an immersive, zoomable 2D Full Craps Table layout with dual-orientation auto-fit, 3-tier point squares, and customizable 2-row splits for Crapless/Easy Craps.
+- **Practice Mode:** Enable "Betless Rolls" in settings to throw dice without active bets, or use "Sevenless Practice" to isolate point strategy testing.
 - **True Odds:** Mathematically accurate payouts, including commissions (vig) for Buy and Lay bets.
 - **Strategies & Tips:** Contextual strategy guides for every betting tab to help you master the game.
-- **Modern UI:** A sleek, edge-to-edge Jetpack Compose interface that adapts beautifully to any screen size.
-- **Privacy First:** No accounts, no trackers, and no data collection. All game data and roll history stay securely on your device.
+- **Modern UI:** A sleek, edge-to-edge Jetpack Compose interface that adapts beautifully to portrait and landscape screen orientations.
+- **Privacy First:** No accounts required. All game data and roll history stay securely on your device, with full Google UMP consent support.
 - **Fair Ad Model:** Play ad-free with a $50 bankroll reset, or watch a single rewarded ad for a "High Roller" bankroll.
-- **Pro Upgrade ($3.99):** A one-time purchase to remove the rewarded ad requirement forever, unlock the **Sevenless** practice mode, and enjoy a premium, ad-free experience.
+- **Pro Upgrade ($4.99):** A one-time purchase to remove the rewarded ad requirement forever, unlock the **Sevenless** practice mode, and enjoy a premium, ad-free experience.
 
 ## Tech Stack
 
 - **Language:** Kotlin 2.1
 - **UI Framework:** Jetpack Compose (Material 2)
 - **Billing:** Google Play Billing Library 9.1.0
-- **Ads:** Google Mobile Ads (AdMob) 25.4.0 with Meta Mediation
+- **Ads & Privacy:** Google Mobile Ads (AdMob) 25.4.0 with Meta Mediation (6.22.0.1) & Google UMP 4.0.0
+- **Analytics:** Firebase Analytics (BOM 34.19.0)
 - **Architecture:** MVVM with State-driven UI
 
 ## Release History
 
-### v1.24 (In Development)
-- **Analytics Precision**: Renamed custom ad reward events to `sevenless_reward_granted` to prevent double-counting of standard AdMob `ad_reward_earned` events.
-- **Sevenless Reward Guard**: Implemented a 20-roll stacking limit to prevent excessive accumulation of "loaded dice" rolls.
-- **Smart Ad Optimization**: Maintained the 5-minute request cooldown for background ad loading to protect the app's Match Rate, while keeping manual reward buttons always accessible via the 30-second fallback timer.
+### v1.28
+- **Android 15 (API 35) & Edge-to-Edge Compliance**: Updated display cutout handling and transparent `SystemBarStyle` edge-to-edge configurations for full Android 15 compatibility.
+- **Dependency & SDK Upgrades**: Upgraded Meta Audience Network Mediation (6.22.0.1), Firebase BOM (34.19.0), Kotlin Compose Plugin (2.4.20), and AndroidX core dependencies.
+- **Default Bet Layout Alignment**: Set **BUY** bets to display on top by default in the Place & Buy grid (users can still tap the ⇄ Swap button to switch PLACE to top).
+- **Crapless & Easy Craps Come Bet Logic**: Updated Come bet logic in Crapless and Easy Craps modes so `2`, `3`, `11`, and `12` establish valid Come Points with mathematically accurate true odds payouts (6:1 for 2/12, 3:1 for 3/11).
+- **Startup State & Dice Restoration**: Ensured dice, active point, puck status, and table state immediately restore where the player left off on app relaunch, defaulting to snake eyes (`1, 1`) on first startup.
+- **Full Table View Layout Mode**:
+  - **Authentic Felt Geometry**: Added an immersive, zoomable 2D Full Craps Table layout as an alternative to traditional betting tabs.
+  - **Dual-Orientation Architecture**: Features a 3-column felt spread in Landscape Mode (One-Roll Bets Left, Main Felt Center, Hardways Right) and an ergonomic vertical stack in Portrait Mode.
+  - **3-Tier Point Squares**: Integrated BUY, PLACE, and established COME Point & Odds into unified point squares (`CombinedPlaceBuySquare`).
+  - **Crapless & Easy Craps Point Number Layout**: In Crapless & Easy Craps Portrait Table View, 10 point numbers (**2–12**) split into 2 spacious 5-column rows with an interactive layout cycle button (🔁) to switch between 4 ordering presets (`2-6 & 8-12`, `2-6 & 12-8`, `6-2 & 12-8`, `6-2 & 8-12`), while Landscape View presents all 10 point numbers in a single horizontal row.
+  - **Dynamic Viewport Auto-Fit & 2D Zooming**: On launch, rotation, or mode switching, the table automatically scales to fit the entire screen viewport. Includes dual zoom-to-fit controls: Top-Right (↔ Fit Width) and Top-Left (↕ Fit Height).
+  - **Item Height & Width Equalization**: Standardized bet item heights (`55dp`) and side column heights across Classic, Crapless, and Easy Craps modes for 100% flush section alignment and zero in-section gaps.
 
-### v1.23
-- **Practice Mode Evolution**: Renamed "Free Rolls" to **Betless Rolls** and added a **Roll Animation** toggle to allow for faster, strategy-focused practice sessions.
-- **Pro Upgrade Value Increase**: Adjusted Pro Upgrade price to **$3.99** and included the **Sevenless** mode as a permanent premium feature.
-- **Sevenless Practice (Ad-Supported)**: Added the ability to watch a single rewarded ad to unlock **10 Sevenless Rolls** (no 7s), allowing users to practice strategy setups or track long-roll scenarios without the risk of a "Seven Out."
-- **Statistical Integrity**: Sevenless rolls (Pro or Rewarded) are automatically excluded from Heatmaps, Roll Frequency, and All-Time Records to ensure user statistics remain authentic and reflect true casino variance.
-- **UI Enhancements**: Added high-visibility indicators for **Sevenless Rolls** and remaining rewarded rolls directly in the game header. Updated layouts for full **Target SDK 37** compliance.
-- **IMPROVED: Ad Request Backoff**: Implemented a 5-minute cooldown following ad load failures. This prevents redundant background requests during network instability, protecting the app's Match Rate and maintaining a high eCPM.
-- **Robust Hop Bets**: Refactored Hop bet win-detection from string-based parsing to a robust, data-driven model within the `BetType` enum.
-- **Enhanced Custom Chips**: Expanded the chip selection bar to include two fully customizable slots (5th and 6th). Introduced a new **Lime Green** color tier for high-value units and added a "Reset" option to easily revert to wealth-based defaults.
+### v1.27
+- **Pro Upgrade List Price**: Updated the Pro upgrade list price to $4.99 ($4.99 one-time purchase).
+- **Enhanced Analytics**: Added Firebase Analytics tracking for bankroll resets, distinguishing between Pro and regular user resets (`user_type`, `is_pro_user`, and reset events).
+- **Lay Odds & Payout Fixes**: Fixed Lay Odds potential win calculations to use zero-vig true odds and corrected 1:1 payout displays for Don't Pass and Don't Come bets.
+- **Terminology & Visual Roll History**: Standardized odds labels to Pass Line / Don't Pass Odds and added semantic color-matched miniature dice pair icons to roll history.
+- **Session Stats & Profit Calculations**: Ensured session roll history and heatmaps persist across restarts until bankroll reset, and updated net profit percentage calculations.
 
-### v1.22
-- **UI & Transparency**: Introduced contextual roll history coloring for 7s, interactive payout formulas, and detailed financial summaries in the roll breakdown. Redesigned indicators and buttons for theme consistency.
-- **Customization & Layout**: Added the ability to cycle through classic number layouts and swap Place/Buy vertical positions for personalized ergonomics.
-- **Ad Reliability & Economics**: Implemented a "Smart Loading" model with late caching, background ad promotion, and an enforced 30s fair-wait policy to stabilize impressions and revenue.
-- **Enhanced Physics**: Re-engineered dice animations with a 3-phase decelerating sequence and synchronized haptics for a more realistic tactile feel.
-- **Practice Features**: Added a toggle to roll the dice without active bets (originally "Free Rolls"), ideal for practicing throws or tracking streaks without risking bankroll.
-- **Platform & Maintenance**: Full compatibility with **Android 16 (API 36)**, Billing Library **v9.1.0**, and optimized R8 shrinking for smaller, faster performance.
+### v1.26
+- **Touch Target Layering Fix**: Resolved critical regression making Information (i) and Close (X) buttons unclickable on bets and the BETS puck.
+- **Icon Standardization**: Restored betting icons to original compact size with consistent, large hit-targets.
+- **Preset Confirmation**: Added clear confirmation dialogs when saving Manual Bet Presets.
+- **Settings & Audio Persistence**: Restored "Set Default" bankroll persistence and fixed audio/haptics toggles continuing when disabled.
+- **Core Architecture Sync**: Improved state synchronization between the game engine and repository to eliminate preference UI lag.
 
-### v1.21
-- **Enhanced Payout Feedback**: New status bar showing exactly how your bank and bets changed on each roll.
-- **Display Toggles**: Easily switch between detailed payout breakdowns and traditional "Won" readouts.
-- **Roll Breakdown**: Itemized "Last Roll" summary showing exactly which of your bets won or lost.
-- **UI Refinements**: Reorganized game status and dice layout for better center-screen visibility.
-- **Bug Fixes**: Corrected potential payout displays and optimized bet category mappings.
+### v1.25
+- **Ergonomic Landscape Layout**: Added dedicated landscape view with immersive full-screen mode, safe-area sidebars, and high-density betting rows.
+- **Contextual Roll History**: Redesigned roll history with bright green (wins), blue (points), red (7-out), and light blue (point set) status coding.
+- **Rotation & State Persistence**: All volatile state, active dialogs, statistics, and roll breakdowns now persist through screen rotation.
+- **Manual Bet Presets & Clean Mode**: Added preset table saving/loading and a setting to hide informational (i) icons for a minimalist UI.
+- **Architecture Refactor**: Decoupled ViewModel from storage with a dedicated `SettingsRepository` for cleaner state management.
 
-### v1.20
-- **Visual Bet Feedback & Lock Logic**: Added clear visual indicators (red prohibitory icons) and contextual "Bet Locked" explanations for contract bets and unavailable wagers.
-- **Enhanced Ad Mediation**: Switched to a real-time bidding model with **Meta Audience Network** integration for better fill rates and improved battery/data efficiency.
-- **Reliability & Safeguards**: Integrated a 30-second ad fallback timer (auto-granting rewards if ads fail) and a "LOADING..." state with interaction locks to prevent UI ghosting.
-- **Maintenance**: Refined internal ad wrappers and optimized SDK lifecycle for broad Android 6.0 (API 23+) compatibility and memory safety.
+### v1.24
+- **Sevenless Practice**: Unlock temporary or permanent "No 7s" mode for strategy-focused practice sessions.
+- **Enhanced Custom Chips**: Added two fully customizable slots with a new Lime Green color tier and reset options.
+- **Practice Mode Evolution**: Renamed "Free Rolls" to Betless Rolls and added a Roll Animation toggle for faster play.
+- **Reliable Puck Logic**: Refined "BETS" puck behavior to match official casino standards during point transitions.
+- **Platform & Maintenance**: Full compatibility with Android 16 (API 37) and Google Play Billing Library v9.1.0.
 
-### Legacy Versions (v1.10 - v1.19)
+### Legacy Versions (v1.10 - v1.23)
+- **v1.23**: Identical to v1.24, with a bankroll refresh bug where users couldn't set their default refresh value.
+- **v1.22**: Added contextual roll history, cycling number layouts, smart ad loading, and 3-phase dice animations.
+- **v1.21**: Added payout status bar, itemized roll breakdown, and UI layout refinements.
+- **v1.20**: Added "Bet Locked" feedback, Meta Ad Mediation, and 30-second reward safety timers.
 - **v1.19**: Added "About" section, Table Limits UI, and fixed Ad Lifecycle bugs.
 - **v1.18**: Added Firebase Analytics support and optimized build performance with R8 Full Mode.
 - **v1.17**: Added Quick Actions (Undo/Repeat), Custom Betting Unit, and UI/Navigation improvements.
@@ -85,14 +97,13 @@ I am actively developing the following features to make Simple Craps the ultimat
 ### Advanced Simulation & Logic
 - **Strategy Assistance:** An interactive guide that highlights optimal betting placements based on selected systems (Iron Cross, Three-Point Molly, etc.).
 - **Audio Calls:** High-quality audio implementation for authentic "Bubble Craps" atmosphere.
+- **Choose your roll:** Add in functionality for the user to choose their next roll (or for pro users to turn on choosing their roll)
 
 ### Professional Analytics
 - **Cloud Data Export:** Securely export roll history and session logs to Google Drive for advanced personal analysis.
 
 ### UI/UX Improvements
-- **Tab Layout Manager:** A new customization tool to rearrange betting tab order or enable a **Split-View Mode**, allowing users to stack two betting areas (e.g., Pass Line and Hardways) on screen simultaneously.
-- **Landscape Support:** A dedicated horizontal layout to provide a more immersive "Wide-Table" experience, especially for tablet users.
-- **Quick Navigation:** Optional "Screen Jump" to return to the main betting area immediately after a roll.
+- **Big Wins:** More Celebration on ATS or any other bigger wins.
 
 ---
 *Created and maintained by Simple Craps.*

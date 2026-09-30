@@ -5,46 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Simple Craps</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #007733; }
-        h2 { color: #444; margin-top: 30px; }
-        .footer { margin-top: 50px; font-size: 0.8em; color: #777; border-top: 1px solid #eee; padding-top: 20px; }
+        :root {
+            --bg-felt: #0b2d18;
+            --card-felt: #124626;
+            --card-inner: rgba(0, 0, 0, 0.4);
+            --gold-accent: #FFD700;
+            --gold-hover: #FFE555;
+            --text-light: #F5F5F5;
+            --text-muted: #B0C4DE;
+            --border-gold: rgba(255, 215, 0, 0.4);
+            --border-light: rgba(255, 255, 255, 0.15);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--bg-felt);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #004d25;
+            color: white;
+            text-align: center;
+            padding: 30px 20px 20px;
+            border-bottom: 3px solid var(--gold-accent);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: var(--gold-accent);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        header p {
+            margin: 5px 0 15px;
+            color: var(--text-light);
+            font-size: 1.1em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        nav a {
+            color: var(--gold-accent);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 14px;
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
+        }
+        nav a:hover, nav a.active {
+            background: var(--gold-accent);
+            color: #000;
+            border-color: var(--gold-accent);
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .section-card {
+            background: var(--card-inner);
+            border: 1px solid var(--border-gold);
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        h2 {
+            color: var(--gold-accent);
+            border-bottom: 2px solid var(--border-gold);
+            padding-bottom: 8px;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        p, li {
+            color: var(--text-light);
+            font-size: 1.02em;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #003318;
+            border-top: 2px solid var(--border-gold);
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+        footer a {
+            color: var(--gold-accent);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
+
+<header>
     <h1>Privacy Policy</h1>
-    <p>Last updated: July 23rd, 2026</p>
+    <p>Simple Craps Mobile Application</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="handbook.html">Handbook & Guide</a>
+        <a href="privacy-policy.html" class="active">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+    </nav>
+</header>
 
-    <p>Joe Martinez operates the <strong>Simple Craps</strong> mobile application (the "Service").</p>
+<div class="container">
+    <div class="section-card">
+        <p><strong>Last updated:</strong> August 4th, 2026</p>
 
-    <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
+        <p>Joe Martinez operates the <strong>Simple Craps</strong> mobile application (the "Service").</p>
 
-    <h2>1. Information Collection and Use</h2>
-    <p>Simple Craps is a simulated gambling game. We do not collect any personal information directly through the app. However, the app uses third-party services that may collect information used to identify you.</p>
+        <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.</p>
 
-    <h2>2. Third-Party Services</h2>
-    <p>The Service uses third-party services that may collect information used to identify you:</p>
-    <ul>
-        <li><strong>Google AdMob & Meta Audience Network:</strong> Used to serve advertisements. These services may collect and use certain data, such as your device's Advertising ID, to provide personalized ads or measure ad performance.</li>
-        <li><strong>Google Play Billing:</strong> Used to process in-app purchases. Transactions are handled securely by Google. We do not store your credit card or payment information.</li>
-        <li><strong>Firebase Analytics:</strong> Used to collect anonymous usage data and app performance metrics to help us improve the game experience. This data is not linked to your identity.</li>
-    </ul>
+        <h2>1. Information Collection and Use</h2>
+        <p>Simple Craps is a simulated gambling game. We do not collect any personal information directly through the app. However, the app uses third-party services that may collect information used to identify you.</p>
 
-    <h2>3. Simulated Gambling</h2>
-    <p>Simple Craps features simulated gambling themes. No real money or items of value can be won or lost in this game. The "Bank" and "Chips" used in the game are virtual and have no real-world monetary value.</p>
+        <h2>2. Third-Party Services</h2>
+        <p>The Service uses third-party services that may collect information used to identify you:</p>
+        <ul>
+            <li><strong>Google AdMob & Meta Audience Network:</strong> Used to serve advertisements. These services may collect and use certain data, such as your device's Advertising ID, to provide personalized ads or measure ad performance.</li>
+            <li><strong>Google Play Billing:</strong> Used to process in-app purchases. Transactions are handled securely by Google. We do not store your credit card or payment information.</li>
+            <li><strong>Firebase Analytics:</strong> Used to collect anonymous usage data and app performance metrics to help us improve the game experience. This data is not linked to your identity.</li>
+        </ul>
 
-    <h2>4. Children's Privacy</h2>
-    <p>Our Service is intended for users who are <strong>18 years of age or older</strong>. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us.</p>
+        <h2>3. Simulated Gambling</h2>
+        <p>Simple Craps features simulated gambling themes. No real money or items of value can be won or lost in this game. The "Bank" and "Chips" used in the game are virtual and have no real-world monetary value.</p>
 
-    <h2>5. Data Deletion & Privacy</h2>
-    <p>Simple Craps does not use user accounts and does not collect or store any personally identifiable information on its own servers. All game progress, preferences (such as Free Rolls), bankroll data, and roll statistics are stored <strong>locally on your device</strong>.</p>
-    <p>If you wish to delete your data, you can do so at any time by clearing the app's storage or cache in your device settings, or by uninstalling the application. Any pseudonymous data collected by third-party services (such as Google AdMob or Firebase) is managed by those providers; you can manage your advertising preferences or reset your Advertising ID via your Android device settings.</p>
+        <h2>4. Children's Privacy</h2>
+        <p>Our Service is intended for users who are <strong>18 years of age or older</strong>. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us.</p>
 
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy, please contact us by email: <strong>joemar1988@gmail.com</strong></p>
+        <h2>5. Data Deletion & Privacy</h2>
+        <p>Simple Craps does not use user accounts and does not collect or store any personally identifiable information on its own servers. All game progress, preferences (such as Betless Rolls), bankroll data, and roll statistics are stored <strong>locally on your device</strong>.</p>
+        <p>If you wish to delete your data, you can do so at any time by clearing the app's storage or cache in your device settings, or by uninstalling the application. Any pseudonymous data collected by third-party services (such as Google AdMob or Firebase) is managed by those providers; you can manage your advertising preferences or reset your Advertising ID via your Android device settings.</p>
 
-    <div class="footer">
-        &copy; 2026 Joe Martinez. All rights reserved.
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us by email: <strong>joemar1988@gmail.com</strong></p>
     </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Joe Martinez. All rights reserved.</p>
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="handbook.html">Handbook & Guide</a> |
+        <a href="privacy-policy.html">Privacy Policy</a> |
+        <a href="terms-of-service.html">Terms of Service</a>
+    </p>
+</footer>
+
 </body>
 </html>
