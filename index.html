@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Craps | Realistic Casino Strategy Tester & Simulator</title>
-    <meta name="description" content="The ultimate no-frills Bubble Craps simulator. Test your betting strategies with Classic, Crapless, and Easy Craps modes with realistic odds.">
-    <meta name="keywords" content="Craps Simulator, Casino Strategy Tester, Dice Roller, Bubble Craps, Betting Strategy, Craps Odds, Crapless Craps, Easy Craps">
+    <title>Simple Craps - Bubble Craps Simulator | Realistic Casino Strategy Tester</title>
+    <meta name="description" content="The ultimate no-frills Bubble Craps simulator & strategy tester. Practice Classic, Crapless, and Easy Craps modes with verified fair dice and realistic odds.">
+    <meta name="keywords" content="Bubble Craps Simulator, Simple Craps, Craps Simulator, Casino Strategy Tester, Dice Roller, Bubble Craps, Betting Strategy, Craps Odds, Crapless Craps, Easy Craps">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>">
+
+    <!-- Open Graph Social Preview Meta Tags -->
+    <meta property="og:title" content="Simple Craps - Bubble Craps Simulator">
+    <meta property="og:description" content="Master your craps betting strategies with realistic math, 2D full table layout, and verified fair dice rolls.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://joemar1988.github.io/index.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Simple Craps - Bubble Craps Simulator">
+    <meta name="twitter:description" content="Practice Classic, Crapless, Easy Craps & Sevenless Mode with realistic odds and deep session analytics.">
+
+    <!-- Google Search JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Simple Craps - Bubble Craps Simulator",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "GameApplication",
+      "author": {
+        "@type": "Person",
+        "name": "Joe Martinez (SimpleCasinoGames)"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "120"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 
     <style>
         :root {
@@ -31,25 +68,25 @@
             background: #004d25;
             color: white;
             text-align: center;
-            padding: 30px 20px 20px;
+            padding: 35px 20px 20px;
             border-bottom: 3px solid var(--gold-accent);
         }
         header h1 {
             margin: 0;
-            font-size: 2.2em;
+            font-size: 2.3em;
             color: var(--gold-accent);
             text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
         header p {
             margin: 5px 0 15px;
             color: var(--text-light);
-            font-size: 1.1em;
+            font-size: 1.15em;
         }
         nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
             margin-top: 15px;
         }
         nav a {
@@ -91,9 +128,9 @@
             display: inline-block;
             background: var(--card-felt);
             color: var(--gold-accent);
-            padding: 5px 15px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 0.88em;
             font-weight: bold;
             margin: 5px;
             border: 1px solid var(--border-gold);
@@ -119,23 +156,42 @@
             font-size: 1.2em;
         }
         .cta-button {
-            display: block;
-            width: 280px;
-            margin: 30px auto 10px;
-            padding: 16px;
+            display: inline-block;
+            margin: 25px auto 10px;
+            padding: 16px 32px;
             text-align: center;
             background: var(--gold-accent);
             color: #000;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 900;
             border-radius: 30px;
-            font-size: 1.1em;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            font-size: 1.2em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             transition: transform 0.2s, background-color 0.2s;
         }
         .cta-button:hover {
-            transform: scale(1.03);
+            transform: scale(1.04);
             background: var(--gold-hover);
+        }
+        /* FAQ Accordion Styling */
+        .faq-item {
+            border-bottom: 1px solid var(--border-light);
+            padding: 15px 0;
+        }
+        .faq-question {
+            color: var(--gold-accent);
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            margin-top: 10px;
+            color: var(--text-light);
+            font-size: 0.98em;
         }
         footer {
             text-align: center;
@@ -161,7 +217,7 @@
 
 <header>
     <h1>🎲 Simple Craps</h1>
-    <p>The Ultimate Strategy Tester for Serious Players</p>
+    <p>Bubble Craps Simulator & Casino Strategy Tester</p>
     <nav>
         <a href="index.html" class="active">Home</a>
         <a href="handbook.html">Handbook & Guide</a>
@@ -171,16 +227,23 @@
 </header>
 
 <div class="container">
-    <div class="section-card">
-        <div style="text-align: center; margin-bottom: 25px;">
-            <div class="badge">Realistic Odds & Verified Fairness</div>
+    <div class="section-card" style="text-align: center;">
+        <div style="margin-bottom: 20px;">
+            <div class="badge">100% Unweighted Fair Dice</div>
             <div class="badge">Classic, Crapless, Easy & Betless</div>
-            <div class="badge">Strategy Focused</div>
+            <div class="badge">Bubble Craps Machine Simulator</div>
         </div>
 
-        <p><strong>Simple Craps</strong> is a dedicated simulator designed for players who want to master their betting systems without the fluff. Modeled after the <strong>Bubble Craps</strong> machines found in modern casinos, we prioritize <strong>realistic math, strategy testing, and statistical accuracy</strong> over flashy effects.</p>
+        <p><strong>Simple Craps - Bubble Craps Simulator</strong> is a dedicated training app designed for players who want to master their betting systems without the fluff. Modeled after the <strong>electronic Bubble Craps machines</strong> found in modern casinos, we prioritize <strong>realistic math, strategy testing, and statistical accuracy</strong> over flashy effects.</p>
 
-        <h2>Why Simple Craps?</h2>
+        <a href="https://play.google.com/store/apps/details?id=com.joemar.simplecraps" class="cta-button">
+            GET IT ON GOOGLE PLAY
+        </a>
+    </div>
+
+    <!-- FEATURES SECTION -->
+    <div class="section-card">
+        <h2>Why Play Simple Craps?</h2>
         <div class="features">
             <div class="feature-box">
                 <h3>Authentic Full Table View</h3>
@@ -215,20 +278,57 @@
                 <p>Deep-dive into roll history, bankroll longevity, and luck analytics to see if your system truly holds up over the long term.</p>
             </div>
         </div>
+    </div>
 
+    <!-- FAQ ACCORDION SECTION -->
+    <div class="section-card">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">1. Is Simple Craps free to play?</div>
+            <div class="faq-answer">Yes! Simple Craps is free to download and play. All core features, game modes (Classic, Crapless, Easy, Betless), analytics, and strategy guides are available for free. Optional Pro upgrades remove rewarded ad requirements.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">2. How does the dice generator work? Are the rolls fair?</div>
+            <div class="faq-answer">Yes, 100%! Every roll generates two independent 6-sided dice (values 1-6) using standard system random number generation (`Random.nextInt(1, 7)`). There is zero house weighting, artificial bias, or manipulation. On two fair dice, 7 naturally occurs 16.67% of the time (1 in 6 rolls).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">3. What is Sevenless Practice Mode?</div>
+            <div class="faq-answer">Sevenless Mode ("No 7s") suppresses 7s during practice rolls. This allows players to isolate and test complex multi-point betting setups, press systems, and long-roll scenarios without sevening out.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">4. How does Crapless Craps handle Come Bets?</div>
+            <div class="faq-answer">In Crapless Craps, there are no Come-Out craps losers (2, 3, 12). When you place a Come bet in Crapless Craps, 7 wins 1:1, while 2, 3, 4, 5, 6, 8, 9, 10, 11, and 12 all establish as valid Come Points with true odds (up to 6:1 on 2 & 12).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">5. Is my game data private?</div>
+            <div class="faq-answer">Yes! Simple Craps requires no user accounts. All bankroll balances, custom settings, roll history, and session records stay stored 100% locally on your device.</div>
+        </div>
+    </div>
+
+    <!-- PLAYER-FIRST SECTION -->
+    <div class="section-card">
         <h2>A Player-First Experience</h2>
         <ul>
             <li><strong>Authentic Payouts:</strong> Full support for Pass Line, Come/Don't Come, Place, Buy, Lay, and ATS bonus bets with mathematically accurate odds—verified by 1,000,000-roll stress tests.</li>
             <li><strong>Minimal Ads:</strong> No mid-roll pop-ups. We respect your focus while you're testing your strategies.</li>
-            <li><strong>Privacy First:</strong> No accounts required. All game data stays securely on your device.</li>
+            <li><strong>Privacy First:</strong> No accounts, no personal data collection. All game data stays securely on your device.</li>
         </ul>
 
-        <a href="https://play.google.com/store/apps/details?id=com.joemar.simplecraps" class="cta-button">Download on Google Play</a>
+        <div style="text-align: center;">
+            <a href="https://play.google.com/store/apps/details?id=com.joemar.simplecraps" class="cta-button">
+                GET IT ON GOOGLE PLAY
+            </a>
+        </div>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 Simple Craps. Built for strategy enthusiasts.</p>
+    <p>&copy; 2026 SimpleCasinoGames / Joe Martinez. Built for strategy enthusiasts.</p>
     <p>
         <a href="index.html">Home</a> |
         <a href="handbook.html">Handbook & Guide</a> |

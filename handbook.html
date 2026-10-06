@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Craps | Player Handbook & Strategy Manual</title>
-    <meta name="description" content="Complete guide to Craps rules, bet types, payouts, strategy systems, game modes, and app settings for Simple Craps.">
+    <title>Simple Craps - Bubble Craps Simulator | Player Handbook & Strategy Manual</title>
+    <meta name="description" content="Complete guide to Craps rules, bet types, payouts, strategy systems, game modes, and app settings for Simple Craps - Bubble Craps Simulator.">
+    <meta name="keywords" content="Bubble Craps Simulator, Simple Craps Handbook, Craps Guide, Craps Strategy, Craps Odds Table, Crapless Craps Guide, Three Point Molly, Iron Cross">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>">
+
+    <!-- Open Graph Social Preview Meta Tags -->
+    <meta property="og:title" content="Simple Craps - Player Handbook & Strategy Manual">
+    <meta property="og:description" content="Learn craps rules, payout odds, popular betting systems, game modes, and app settings in the official Simple Craps guide.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://joemar1988.github.io/handbook.html">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         :root {
             --bg-felt: #0b2d18;
@@ -47,7 +59,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
             margin-top: 15px;
         }
         nav a {
@@ -65,6 +77,36 @@
             color: #000;
             border-color: var(--gold-accent);
         }
+        /* Sticky Jump Bar */
+        .jump-bar {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 50, 24, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-gold);
+            padding: 10px 15px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .jump-bar a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.88em;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid var(--border-gold);
+            transition: background-color 0.2s;
+        }
+        .jump-bar a:hover {
+            background: var(--gold-accent);
+            color: #000;
+        }
         .container {
             max-width: 900px;
             margin: 30px auto;
@@ -77,6 +119,7 @@
             padding: 25px 30px;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            scroll-margin-top: 60px;
         }
         h2 {
             color: var(--gold-accent);
@@ -156,6 +199,8 @@
         footer a:hover {
             text-decoration: underline;
         }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -171,10 +216,19 @@
     </nav>
 </header>
 
+<!-- Quick Jump Section Navigation -->
+<div class="jump-bar">
+    <a href="#essentials">1. Essentials</a>
+    <a href="#modes">2. Game Modes</a>
+    <a href="#payouts">3. Payout Table</a>
+    <a href="#strategies">4. Strategies</a>
+    <a href="#app-controls">5. App Controls</a>
+</div>
+
 <div class="container">
 
     <!-- 1. CRAPS BASICS -->
-    <div class="section-card">
+    <div class="section-card" id="essentials">
         <h2>1. Craps Essentials & Game Flow</h2>
         <p>Craps is played in rounds determined by the throw of two 6-sided dice. A complete round consists of two distinct phases:</p>
 
@@ -188,6 +242,7 @@
 
         <h3>B. Point Phase (Phase 2)</h3>
         <p>Once a Point is established, the shooter continues rolling until one of two events occurs:</p>
+
         <ul>
             <li><strong>Making the Point</strong>: The point number is rolled again. Pass Line bets win 1:1, Pass Odds win true odds, and the puck flips back to <span class="badge">OFF</span> for a new Come-Out roll.</li>
             <li><strong>Seven Out (7)</strong>: A 7 is rolled before making the point. Pass Line and Place bets lose. Don't Pass wins. The round ends and resets to Come-Out.</li>
@@ -195,7 +250,7 @@
     </div>
 
     <!-- 2. GAME MODES -->
-    <div class="section-card">
+    <div class="section-card" id="modes">
         <h2>2. Game Modes Explained</h2>
         <p>Simple Craps offers four specialized game variants so you can practice under exact casino conditions:</p>
 
@@ -216,7 +271,7 @@
     </div>
 
     <!-- 3. BET TYPES & PAYOUTS -->
-    <div class="section-card">
+    <div class="section-card" id="payouts">
         <h2>3. Complete Bet Types & Payout Table</h2>
         <p>All payouts in Simple Craps are verified against mathematical odds tables and 1,000,000-roll stress tests.</p>
 
@@ -339,7 +394,7 @@
     </div>
 
     <!-- 4. POPULAR STRATEGIES -->
-    <div class="section-card">
+    <div class="section-card" id="strategies">
         <h2>4. Popular Craps Betting Systems</h2>
 
         <h3>A. The Three-Point Molly</h3>
@@ -365,7 +420,7 @@
     </div>
 
     <!-- 5. APP CONTROLS & SETTINGS -->
-    <div class="section-card">
+    <div class="section-card" id="app-controls">
         <h2>5. App Navigation & Settings Reference</h2>
 
         <h3>Full Table View vs Tabbed View</h3>
@@ -388,7 +443,7 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 Simple Craps. Built for strategy enthusiasts.</p>
+    <p>&copy; 2026 SimpleCasinoGames / Joe Martinez. Built for strategy enthusiasts.</p>
     <p>
         <a href="index.html">Home</a> |
         <a href="handbook.html">Handbook & Guide</a> |
