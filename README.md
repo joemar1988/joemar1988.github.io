@@ -15,6 +15,9 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 - **True Odds:** Mathematically accurate payouts, including commissions (vig) for Buy and Lay bets.
 - **Strategies & Tips:** Contextual strategy guides for every betting tab to help you master the game.
 - **Modern UI:** A sleek, edge-to-edge Jetpack Compose interface that adapts beautifully to portrait and landscape screen orientations.
+- **Google Play Games on PC & Desktop:** Full compatibility with Google Play Games for PC and Chromebooks, featuring mouse/trackpad controls, custom window resizing, and dark felt launch window styling.
+- **Sevens Streak Analytics (7S Tab):** Dedicated 4-column statistical table tracking rolls between sevens (0 to 30+) compared against theoretical geometric probabilities formatted to 2 decimal places.
+- **Full Table View & Section Minimization:** Toggle between traditional betting tabs and a zoomable 2D Full Craps Table layout featuring 1-tap `−` / `+` minimization controls for One-Roll and Hardways sections to maximize screen space on any device.
 - **Privacy First:** No accounts required. All game data and roll history stay securely on your device, with full Google UMP consent support.
 - **Fair Ad Model:** Play ad-free with a $50 bankroll reset, or watch a single rewarded ad for a "High Roller" bankroll.
 - **Pro Upgrade ($4.99):** A one-time purchase to remove the rewarded ad requirement forever, unlock the **Sevenless** practice mode, and enjoy a premium, ad-free experience.
@@ -30,19 +33,23 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 
 ## Release History
 
+### v1.29
+- **Unified Quick Bulk Betting**: Added 1-tap `BUY ALL` (1st) and `PLACE ALL` / `PRESS ALL` (2nd) buttons above point numbers in Full Table View across all game modes and orientations.
+- **Classic Don't Come Layout**: Added a 50/50 split `DON'T COME` line and dedicated Don't Come / Don't Odds rows on point cards in Classic Craps mode.
+- **Table Section Minimization Controls (`−` / `+`)**: Added 1-tap collapse/expand toggles for One-Roll & Hop Bets and Hardways sections in Full Table View (collapsing into 36dp vertical strips in landscape or 1-line bars in portrait) to give players complete screen real estate flexibility.
+- **House Rules Customizations**: Added new House Rules settings for Any 7 Payouts (4:1 Standard vs 5:1 Generous) and Don't Pass Max Odds limits (Same as Pass, 2x Pass Odds, 4x Pass Odds, or custom multipliers).
+- **Top Bar Layout Stability**: Locked top action buttons (Stats, Cash/Reset, Email, Info, Settings) to fixed dimensions, preventing top bar overflow or Settings button clipping when increasing UI Scale.
+- **Sevens Streak Frequency Table (7S Tab)**: Added a 4th tab in the Statistics dialog tracking rolls between sevens (0 to 30+) with 2-decimal accuracy against exact theoretical geometric distribution odds.
+- **Google Play Games on PC Optimization**: Added dark casino felt window background (`android:windowBackground`) and non-blocking UMP consent handling for instant desktop launching.
+- **Table Layout Analytics**: Added dedicated Firebase Analytics logging for Full Table View vs Tabbed View toggles and user preference trends.
+- **Enhanced Settings Event Tracking**: Extended analytics tracking across all settings toggles, dice color selections, and felt theme customizations.
+
 ### v1.28
-- **Android 15 (API 35) & Edge-to-Edge Compliance**: Updated display cutout handling and transparent `SystemBarStyle` edge-to-edge configurations for full Android 15 compatibility.
-- **Dependency & SDK Upgrades**: Upgraded Meta Audience Network Mediation (6.22.0.1), Firebase BOM (34.19.0), Kotlin Compose Plugin (2.4.20), and AndroidX core dependencies.
-- **Default Bet Layout Alignment**: Set **BUY** bets to display on top by default in the Place & Buy grid (users can still tap the ⇄ Swap button to switch PLACE to top).
-- **Crapless & Easy Craps Come Bet Logic**: Updated Come bet logic in Crapless and Easy Craps modes so `2`, `3`, `11`, and `12` establish valid Come Points with mathematically accurate true odds payouts (6:1 for 2/12, 3:1 for 3/11).
-- **Startup State & Dice Restoration**: Ensured dice, active point, puck status, and table state immediately restore where the player left off on app relaunch, defaulting to snake eyes (`1, 1`) on first startup.
-- **Full Table View Layout Mode**:
-  - **Authentic Felt Geometry**: Added an immersive, zoomable 2D Full Craps Table layout as an alternative to traditional betting tabs.
-  - **Dual-Orientation Architecture**: Features a 3-column felt spread in Landscape Mode (One-Roll Bets Left, Main Felt Center, Hardways Right) and an ergonomic vertical stack in Portrait Mode.
-  - **3-Tier Point Squares**: Integrated BUY, PLACE, and established COME Point & Odds into unified point squares (`CombinedPlaceBuySquare`).
-  - **Crapless & Easy Craps Point Number Layout**: In Crapless & Easy Craps Portrait Table View, 10 point numbers (**2–12**) split into 2 spacious 5-column rows with an interactive layout cycle button (🔁) to switch between 4 ordering presets (`2-6 & 8-12`, `2-6 & 12-8`, `6-2 & 12-8`, `6-2 & 8-12`), while Landscape View presents all 10 point numbers in a single horizontal row.
-  - **Dynamic Viewport Auto-Fit & 2D Zooming**: On launch, rotation, or mode switching, the table automatically scales to fit the entire screen viewport. Includes dual zoom-to-fit controls: Top-Right (↔ Fit Width) and Top-Left (↕ Fit Height).
-  - **Item Height & Width Equalization**: Standardized bet item heights (`55dp`) and side column heights across Classic, Crapless, and Easy Craps modes for 100% flush section alignment and zero in-section gaps.
+- **Full Table View Layout Mode**: Added an authentic, zoomable 2D Full Craps Table layout with dual-orientation support (3-column spread in landscape, vertical stack in portrait).
+- **Crapless & Easy Craps Come Bet Logic**: Updated Come bet logic so `2`, `3`, `11`, and `12` establish valid Come Points with mathematically accurate true odds payouts.
+- **Startup State & Dice Restoration**: Ensured dice, active point, puck status, and table bets restore right where the player left off on app relaunch (defaulting to snake eyes `1, 1` on first startup).
+- **Platform & Dependency Upgrades**: Upgraded to minSdk 24 for Play Protection, Android 15 edge-to-edge compliance, Meta Mediation (6.22.0.1), Firebase BOM (34.19.0), and Kotlin 2.1.
+- **Bet Layout & UX Enhancements**: Set BUY bets to top by default, standardized item heights (`55dp`), and optimized bet placement hit targets.
 
 ### v1.27
 - **Pro Upgrade List Price**: Updated the Pro upgrade list price to $4.99 ($4.99 one-time purchase).
@@ -65,14 +72,8 @@ A professional-grade Craps simulator for Android, modeled after modern "Bubble C
 - **Manual Bet Presets & Clean Mode**: Added preset table saving/loading and a setting to hide informational (i) icons for a minimalist UI.
 - **Architecture Refactor**: Decoupled ViewModel from storage with a dedicated `SettingsRepository` for cleaner state management.
 
-### v1.24
-- **Sevenless Practice**: Unlock temporary or permanent "No 7s" mode for strategy-focused practice sessions.
-- **Enhanced Custom Chips**: Added two fully customizable slots with a new Lime Green color tier and reset options.
-- **Practice Mode Evolution**: Renamed "Free Rolls" to Betless Rolls and added a Roll Animation toggle for faster play.
-- **Reliable Puck Logic**: Refined "BETS" puck behavior to match official casino standards during point transitions.
-- **Platform & Maintenance**: Full compatibility with Android 16 (API 37) and Google Play Billing Library v9.1.0.
-
-### Legacy Versions (v1.10 - v1.23)
+### Legacy Versions (v1.10 - v1.24)
+- **v1.24**: Added Sevenless Practice mode, Lime Green custom chip slot, Betless Rolls evolution, and Android 16 compatibility.
 - **v1.23**: Identical to v1.24, with a bankroll refresh bug where users couldn't set their default refresh value.
 - **v1.22**: Added contextual roll history, cycling number layouts, smart ad loading, and 3-phase dice animations.
 - **v1.21**: Added payout status bar, itemized roll breakdown, and UI layout refinements.
